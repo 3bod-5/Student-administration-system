@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/studentNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1>Received Messages</h1>
+            
+            <ul class="message-list">
+                <% messages.forEach(message => { %>
+                    <li class="message-item">
+                        <div class="message-header">
+                            <span class="message-sender"><%= message.sender %></span>
+                            <span class="message-time"><%= message.timestamp %></span>
+                        </div>
+                        <div class="message-body">
+                            <%= message.message %>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+
+    </div>
+    
+</body>
+</html>

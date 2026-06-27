@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add User</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1>Create New User Account</h1>
+            
+            <form action="/admin/add-user" method="post">
+                
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter Full Username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" placeholder="e.g., Computer Science" name="department" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="username@university.edu" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality" placeholder="Enter Nationality" name="nationality" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateofbirth">Date of Birth</label>
+                    <input type="date" id="dateofbirth" name="dateofbirth" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Initial Password</label>
+                    <input type="password" id="password" placeholder="Create Secure Password" name="password" required>
+                </div>
+
+                <div class="radio-section">
+                    <span class="radio-section-title">Academic Level (Students Only)</span>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" id="one" name="level" value="1" required> 1</label>
+                        <label class="radio-label"><input type="radio" id="two" name="level" value="2" required> 2</label>
+                        <label class="radio-label"><input type="radio" id="three" name="level" value="3" required> 3</label>
+                        <label class="radio-label"><input type="radio" id="four" name="level" value="4" required> 4</label>
+                    </div>
+                </div>
+
+                <div class="radio-section">
+                    <span class="radio-section-title">Account Type / Portal Role</span>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" id="student" name="type" value="student" required> Student</label>
+                        <label class="radio-label"><input type="radio" id="staff" name="type" value="staff" required> Staff</label>
+                        <label class="radio-label"><input type="radio" id="admin" name="type" value="admin" required> Admin</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-add btn-admin-submit">Add User Account</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

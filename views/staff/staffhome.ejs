@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Portal</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/staffNav') %>
+    <nav class="navbar">
+        <div class="navbar-brand">Staff Portal</div>
+        <div class="navbar-links">
+            <a href="/staff/staffinfo">Staff Info</a>
+            <a href="/staff/doctorCourses">Doctor Courses</a>
+            <a href="/staff/all-students">All Students</a>
+            <a href="/staff/search-student">Student Search</a>
+            <a href="/staff/messages">Send Messages</a>
+            <a href="/logout" class="nav-logout">Logout</a>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <div class="container text-center dashboard-welcome">
+            <h1>Welcome to the Staff Administration Panel</h1>
+            <p>Access and manage student records, browse active courses, or send direct announcements using the portal navigation system above.</p>
+        </div>
+    </div>
+    
+</body>
+</html>

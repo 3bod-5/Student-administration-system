@@ -1,0 +1,826 @@
+/* Modern Color Palette & Reset */
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --primary-color: #1e293b; /* Deep Slate Blue */
+    --accent-color: #0ea5e9;  /* Vibrant Teal/Sky Blue */
+    --danger-color: #ef4444;  /* Soft Red for delete */
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Container Styling */
+.container {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s, transform 0.1s;
+    font-size: 0.95rem;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-add {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn-add:hover {
+    background-color: #0f172a;
+}
+
+.btn-delete {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-delete:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Subject List Styling */
+.subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sub-item:last-child {
+    border-bottom: none;
+}
+
+.sub-info p {
+    margin: 4px 0;
+}
+
+.course-name {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.course-code {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background-color: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+/* Grades Table Styles */
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.grades-table th {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 14px 16px;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.grades-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.grades-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Subtle row hover effect */
+.grades-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.subject-cell {
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* Modern Pill Style Badge for Grades */
+.badge-grade {
+    background-color: rgba(14, 165, 233, 0.1); /* Light Teal tint */
+    color: var(--accent-color); /* Vibrant Teal font */
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Message List Styles */
+.message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.message-item:last-child {
+    border-bottom: none;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.message-sender {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.message-body {
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    background-color: #f8fafc;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-color); /* Elegant Teal indicator accent line */
+}
+/* Student Profile Styles */
+.text-center {
+    text-align: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.profile-avatar {
+    width: 70px;
+    height: 70px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 10px auto 20px auto;
+    box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
+}
+
+.profile-details {
+    margin-top: 25px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+/* Navigation Bar Styles */
+.navbar {
+    width: 100%;
+    background-color: var(--primary-color); /* Deep Slate Blue */
+    padding: 0 24px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-links a {
+    color: #94a3b8; /* Muted modern grey */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.navbar-links a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Accent highlight for logout button */
+.navbar-links a.nav-logout {
+    color: #fca5a5; /* Soft light red link */
+}
+
+.navbar-links a.nav-logout:hover {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+/* Adjust layout space so content doesn't hide underneath the fixed navbar */
+body {
+    padding-top: 100px !important;
+}
+
+.dashboard-welcome p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+/* Course Explorer Layout */
+.page-header {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.page-header h1 {
+    border-bottom: none;
+    margin-bottom: 4px;
+}
+
+.subtitle-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Grid Layout */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* Elegant Course Card Cards */
+.course-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid transparent;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.course-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.course-badge-code {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.course-badge-dept {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    background-color: rgba(14, 165, 233, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.course-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Overriding wrapper constraints for this page specifically to allow a wider responsive dashboard grid */
+@media (min-width: 768px) {
+    .main-wrapper {
+        max-width: 900px !important;
+    }
+}
+
+/* Staff Directory & Search Layout Styles */
+.search-form .form-group {
+    margin-bottom: 0;
+}
+
+.search-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-search {
+    background-color: var(--accent-color); /* Bright Teal for primary action */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.btn-search:hover {
+    background-color: #0284c7;
+}
+
+/* Directory List Formatting */
+.directory-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.directory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.directory-item:last-child {
+    border-bottom: none;
+}
+
+.student-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.student-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.student-dept {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Row Action Buttons Alignment */
+.directory-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-action {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.btn-update {
+    background-color: #f1f5f9;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-update:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-delete-link {
+    background-color: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+}
+
+.btn-delete-link:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+/* Screen readers accessibility helper label */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/* Staff Course Catalog Styles */
+.catalog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.catalog-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.catalog-item:last-child {
+    border-bottom: none;
+}
+
+.catalog-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.catalog-code {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    background-color: rgba(14, 165, 233, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+}
+/* Staff Messenger Enhancements */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.btn-send {
+    background-color: var(--accent-color); /* Bright teal action style */
+}
+
+.btn-send:hover {
+    background-color: #0284c7;
+}
+
+.label-to {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-right: 4px;
+}
+
+/* Sent message block slight color variation to distinguish from incoming ones */
+.sent-body {
+    border-left-color: var(--primary-color) !important; /* Indigo/Slate indicator badge line */
+    background-color: #fafafa;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--text-muted);
+    font-style: italic;
+}
+/* Inline Grading Layout Styles */
+.inline-grading-table td {
+    vertical-align: middle;
+}
+
+.inline-grade-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Make the inline row inputs smaller and tighter */
+.inline-grade-form input[type="text"] {
+    max-width: 110px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+.inline-grade-form .btn-search {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    height: auto;
+}
+
+/* Expand layout slightly for the multi-column table */
+@media (min-width: 768px) {
+    .main-wrapper {
+        max-width: 750px !important;
+    }
+}
+
+/* Admin Form Specific Selection Styling */
+.radio-section {
+    margin-bottom: 22px;
+}
+
+.radio-section-title {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background-color: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.radio-label input[type="radio"] {
+    margin: 0;
+    accent-color: var(--accent-color); /* Matches checkboxes/radios to your Teal shade */
+    width: 16px;
+    height: 16px;
+}
+
+.btn-admin-submit {
+    background-color: var(--primary-color); /* Keeps administrative creation button crisp slate navy */
+    margin-top: 15px;
+}
+
+.btn-admin-submit:hover {
+    background-color: #0f172a;
+}
+
+/* Date Input Styling Override */
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text-main);
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+/* Administrative Danger Form Styles */
+.danger-title {
+    color: var(--danger-color) !important;
+}
+
+.danger-subtitle {
+    margin-bottom: 20px;
+    background-color: rgba(239, 110, 110, 0.08);
+    padding: 10px 14px;
+    border-radius: 6px;
+    border-left: 3px solid var(--danger-color);
+}
+
+.btn-danger-submit {
+    background-color: var(--danger-color);
+    margin-top: 10px;
+}
+
+.btn-danger-submit:hover {
+    background-color: #dc2626; /* Darker deep red on focus hover */
+}
+/* Admin Student Grade Sheet Row Styles */
+.grading-row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.grading-meta {
+    flex: 1;
+}
+
+.grading-input-wrap {
+    width: 160px;
+}
+
+.grading-input-wrap input[type="text"] {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin: 0;
+}
+/* Portal Login Specific Layouts */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+
+.login-card {
+    max-width: 420px !important;
+    padding: 35px 30px !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.login-avatar-container {
+    margin-bottom: 15px;
+}
+
+.user-avatar {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    padding: 6px;
+    border: 1px solid var(--border-color);
+}

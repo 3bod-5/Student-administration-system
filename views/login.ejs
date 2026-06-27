@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Login</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <div class="main-wrapper login-wrapper">
+        
+        <div class="container login-card text-center">
+            
+            <div class="login-avatar-container">
+                <img class="user-avatar" src="https://i.ibb.co/yVGxFPR/2.png" alt="User Avatar Login Graphic">
+            </div>
+            
+            <h1>Account Login</h1>
+            <p class="subtitle-text">Please sign in to access your dashboard portal</p>
+            
+            <form action="/" method="post" class="text-left">
+                
+                <div class="form-group">
+                    <label for="name">Username / Identity Name</label>
+                    <input type="text" id="name" name="username" placeholder="Enter your registered name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter security password" required>
+                </div>
+                
+                <div class="radio-section">
+                    <span class="radio-section-title">Select Portal Role</span>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" id="student" name="type" value="student" required> Student
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="staff" name="type" value="staff" required> Doctor
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" id="admin" name="type" value="admin" required> Admin
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-add btn-search" style="width: 100%; margin-top: 10px; height: auto; padding: 12px;"> Authenticate & Login </button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

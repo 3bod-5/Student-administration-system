@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/studentNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container text-center">
+            <div class="profile-avatar">
+                <%= user.username.charAt(0).toUpperCase() %>
+            </div>
+            
+            <h1>Welcome, <%= user.username %></h1>
+            
+            <div class="profile-details">
+                <div class="detail-row">
+                    <span class="detail-label">Account Type</span>
+                    <span class="detail-value text-capitalize"><%= user.type %></span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="detail-label">Department</span>
+                    <span class="detail-value"><%= user.department %></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search System Directory</title>
+    <!-- Links to your shared stylesheet -->
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="main-wrapper">
+        
+        <!-- Search Card Container -->
+        <div class="container">
+            <h1>Search System Directory</h1>
+            
+            <form action="/admin/search/result" method="get" class="search-form">
+                <div class="form-group search-group">
+                    <label for="username" class="visually-hidden">User name</label>
+                    <input type="text" id="username" name="name" placeholder="Enter username or faculty name..." required>
+                    <button type="submit" class="btn-search">Search</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

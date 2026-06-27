@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/studentNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1>Add New Course</h1>
+            <form action="/student/subjectToStudent" method="post">
+                <div class="form-group">
+                    <label for="coursename">Course Name</label>
+                    <input type="text" id="coursename" placeholder="e.g., Introduction to Computer Science" name="coursename" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="code">Course Code</label>
+                    <input type="text" id="code" placeholder="e.g., CS101" name="code" required>
+                </div>
+                
+                <button type="submit" class="btn-add">Add Course</button>
+            </form>
+        </div>
+        
+        <div class="container">
+            <h1>List of Subjects</h1>
+            <ul class="subject-list">
+                <% for(let i = 0 ; i < subject.length ; i++) { %>
+                    <li class="sub-item">
+                        <div class="sub-info">
+                            <p class="course-name"><%= subject[i].name %></p>
+                            <p class="course-code"><%= subject[i].code %></p>
+                        </div>
+                        <form action="/student/deleteSubject/<%= subject[i]._id %>" method="post" style="display:inline;">
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+    </div>
+    
+</body>
+</html>

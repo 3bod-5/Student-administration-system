@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Assign Grades</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1>Assign Student Grades</h1>
+            <p class="subtitle-text">Enter the student's name and update their course marks below.</p>
+            
+            <form action="/admin/student-grade" method="POST">
+                
+                <div class="form-group">
+                    <label for="studentName">Student Full Name</label>
+                    <input type="text" id="studentName" placeholder="Enter Name" name="name" required>
+                </div>
+                
+                <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--border-color);">
+
+                <h3 style="color: var(--primary-color); font-size: 1.1rem; margin-bottom: 15px;">Subject List</h3>
+                <ul class="catalog-list">
+                    <% subject.forEach(subjects => { %>
+                        <li class="catalog-item grading-row-item">
+                            <div class="grading-meta">
+                                <span class="catalog-name"><%= subjects.name %></span>
+                            </div>
+                            <div class="grading-input-wrap">
+                                <label class="visually-hidden" for="grade-<%= subjects._id %>">Grade for <%= subjects.name %></label>
+                                <input type="text" id="grade-<%= subjects._id %>" placeholder="Enter Grade (e.g., A+)" name="grade" required>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+                
+                <button type="submit" class="btn-add btn-admin-submit" style="margin-top: 25px;">Save All Grades</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

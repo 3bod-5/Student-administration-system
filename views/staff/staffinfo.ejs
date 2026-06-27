@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Profile Information</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/staffNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container text-center">
+            <div class="profile-avatar">
+                <%= username.charAt(0).toUpperCase() %>
+            </div>
+            
+            <h1>Welcome, <%= username %></h1>
+            
+            <div class="profile-details">
+                <div class="detail-row">
+                    <span class="detail-label">Account Role</span>
+                    <span class="detail-value text-capitalize"><%= type %></span>
+                </div>
+                
+                <div class="detail-row">
+                    <span class="detail-label">Department</span>
+                    <span class="detail-value"><%= department %></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

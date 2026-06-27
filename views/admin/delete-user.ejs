@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Remove User</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1 class="danger-title">Delete User Account</h1>
+            <p class="subtitle-text danger-subtitle">Warning: This action is permanent and cannot be undone.</p>
+            
+            <form action="/admin/delete-user" method="POST">
+                
+                <div class="form-group">
+                    <label for="userId">User ID Database Reference</label>
+                    <input type="text" id="userId" placeholder="e.g., 603d21be8f12a30015b6789a" name="id" required>
+                </div>
+
+                <button type="submit" class="btn-add btn-danger-submit">Permanently Delete User</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

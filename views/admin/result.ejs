@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="main-wrapper">
+        
+        <% if (userNotFound) { %>
+            <div class="container text-center">
+                <h1 class="danger-title">User Not Found</h1>
+                <p class="subtitle-text">The requested account record does not exist in the database directory.</p>
+            </div>
+            
+        <% } else if (invalidtype) { %>
+            <div class="container text-center">
+                <h1 class="danger-title">Access Restricted</h1>
+                <p class="subtitle-text">Invalid role type detected. Only core system Student and Staff modules are supported.</p>
+            </div>
+            
+        <% } else { %>
+            
+            <div class="container page-header">
+                <p class="subtitle-text">Database Match Verified</p>
+                <h1 style="border-bottom: none; margin-bottom: 4px;"><%= user.name %></h1>
+                <span class="course-badge-dept" style="display: inline-block; text-transform: capitalize;"><%= user.type %></span>
+            </div>
+
+            <% if (user.type === 'student') { %>
+                <div class="container">
+                    <h1>Registered Academic Subjects</h1>
+                    
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Title</th>
+                                <th>Course Code</th>
+                                <th style="text-align: right;">Final Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% subjects.forEach(subject => { %>
+                                <tr>
+                                    <td class="subject-cell" style="font-weight: 600;"><%= subject.name %></td>
+                                    <td><span class="catalog-code" style="background: rgba(15, 23, 42, 0.05); color: var(--primary-color);"><%= subject.code %></span></td>
+                                    <td style="text-align: right;">
+                                        <% if (subject.grade) { %>
+                                            <span class="badge-grade"><%= subject.grade %></span>
+                                        <% } else { %>
+                                            <span class="text-muted">Pending</span>
+                                        <% } %>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+
+            <% } else if (user.type === 'staff') { %>
+                <div class="container">
+                    <h1>Assigned Instruction Catalog</h1>
+                    
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Course Title</th>
+                                <th>Catalog Code</th>
+                                <th style="text-align: right;">Instructor Assignment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% courses.forEach(course => { %>
+                                <tr>
+                                    <td class="subject-cell" style="font-weight: 600;"><%= course.name %></td>
+                                    <td><span class="catalog-code"><%= course.code %></span></td>
+                                    <td class="text-muted" style="text-align: right; font-size: 0.9rem;"><%= course.doctorname %></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            <% } %>
+
+        <% } %>
+
+    </div>
+
+</body>
+</html>

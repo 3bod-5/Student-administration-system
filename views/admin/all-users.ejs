@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1>Search Users</h1>
+            <form action="/admin/all-users" method="get" class="search-form">
+                <div class="form-group search-group">
+                    <label for="studentname" class="visually-hidden">User name</label>
+                    <input type="text" id="studentname" placeholder="Enter name to search..." name="studentname" required>
+                    <button type="submit" class="btn-search">Search</button>
+                </div>
+            </form>
+        </div>
+            
+        <div class="container"> 
+            <h1>System Users Directory</h1>
+            
+            <ul class="directory-list">
+                <% for(let i = 0 ; i < users.length ; i++){ %> 
+                    <li class="directory-item">
+                        <div class="student-meta">
+                            <span class="student-name"><%= users[i].name %></span>
+                            <span class="student-dept"><%= users[i].department %></span>
+                        </div>
+                        <div class="directory-actions">
+                            <a href="/admin/updateUserPage/<%= users[i]._id %>" class="btn-action btn-delete-link">Update</a> 
+                            <a href="/admin/delete-user/<%= users[i]._id %>" class="btn-action btn-delete-link">Delete</a> 
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

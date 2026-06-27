@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading Panel</title>
+    <!-- Links to your shared stylesheet -->
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/staffNav') %>
+    <div class="main-wrapper">
+        
+        <% if (student) { %>
+            <!-- Student Header Card -->
+            <div class="container page-header">
+                <p class="subtitle-text">Search Results & Grading</p>
+                <h1 style="border-bottom: none; margin-bottom: 0;">Student: <%= student.name %></h1>
+            </div>
+
+            <!-- Subjects Grading Table Card -->
+            <div class="container">
+                <h1>Enrolled Subjects</h1>
+                
+                <table class="grades-table inline-grading-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Current Grade</th>
+                            <th style="text-align: right;">Assign/Update Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% student.subjects.forEach(subject => { %>
+                            <tr>
+                                <td class="subject-cell"><%= subject.name %></td>
+                                <td>
+                                    <% if (subject.grade) { %>
+                                        <span class="badge-grade"><%= subject.grade %></span>
+                                    <% } else { %>
+                                        <span class="text-muted">Not graded</span>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <!-- Inline grading form -->
+                                    <form action="/staff/add-grade/<%= student._id %>/<%= subject._id %>" method="POST" class="inline-grade-form">
+                                        <input type="text" name="grade" placeholder="e.g., A+" required>
+                                        <button type="submit" class="btn-action btn-search">Submit</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        <% } else { %>
+            <div class="container text-center">
+                <h1>No Results Found</h1>
+                <p class="text-muted">Please go back and verify the student's name.</p>
+            </div>
+        <% } %>
+
+    </div>
+
+</body>
+</html>

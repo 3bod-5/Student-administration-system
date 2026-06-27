@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/studentNav') %>
+    <div class="main-wrapper">
+        
+        <div class="container">
+            <h1>Student Grades</h1>
+
+            <table class="grades-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subjects.forEach(subject => { %>
+                        <tr>
+                            <td class="subject-cell"><%= subject.name %></td>
+                            <td>
+                                <% if (subject.grade) { %>
+                                    <span class="badge-grade"><%= subject.grade %></span>
+                                <% } else { %>
+                                    <span class="text-muted">Not available</span>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog</title>
+    <!-- Links to your shared stylesheet -->
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/staffNav') %>
+    <div class="main-wrapper">
+        
+        <!-- Course Catalog Container -->
+        <div class="container">
+            <h1>Course Catalog</h1>
+            
+            <ul class="catalog-list">
+                <% for(let i = 0 ; i < courses.length ; i++){ %>
+                    <li class="catalog-item">
+                        <div class="catalog-info">
+                            <span class="catalog-name"><%= courses[i].name %></span>
+                            <span class="catalog-code"><%= courses[i].code %></span>
+                        </div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

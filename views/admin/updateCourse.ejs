@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Course</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+ <form action="/admin/update-course/<%= course._id %>" method="POST">
+  <label for="Prof">Course Prof:</label>
+  <input type="text" id="Prof" name="Prof" value="<%= course.doctorname %>"> 
+
+  <label for="title">Course Title:</label>
+  <input type="text" id="title" name="title" value="<%= course.name %>">
+
+
+
+  <button type="submit">Update Course</button>
+</form>   
+</body>
+</html>

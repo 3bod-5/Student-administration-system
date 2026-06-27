@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/adminNav') %>
+    <div class="container"> 
+    <%for(let i = 0 ; i<courses.length ; i++){%> 
+        <div class="subject">   
+        <p>Course Name : <%=courses[i].name%></p>
+        <p>Course Code : <%=courses[i].code%></p>
+        <br><br><br>
+        <button><a href="/admin/delete-course/<%=courses[i]._id %>">Delete</a></button> 
+        <button><a href="/admin/updateCoursePage/<%=courses[i]._id %>">Update</a></button>
+        </div>
+    <%}%>
+    
+    </div>
+
+</body>
+</html>

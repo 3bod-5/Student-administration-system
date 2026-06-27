@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student Grades</title>
+    <!-- Links to your shared stylesheet -->
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('../partials/staffNav') %>
+    <div class="main-wrapper">
+        
+        <!-- Search Card Container -->
+        <div class="container">
+            <h1>Search for a Student</h1>
+            
+            <form action="/staff/student-grades" method="get" class="search-form">
+                <div class="form-group search-group">
+                    <label for="studentname" class="visually-hidden">Student name</label>
+                    <input type="text" id="studentname" name="studentname" placeholder="Enter student name..." required>
+                    <button type="submit" class="btn-search">Search</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
