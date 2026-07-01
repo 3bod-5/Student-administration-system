@@ -35,7 +35,8 @@ router.route('/add-course')
 
 router.get('/all-courses', adminController.getAllCourses);     
 router.post('/delete-course/:_id', adminController.deleteCourse); 
-router.get('/updateCoursePage/:_id', adminController.updateCoursePage); 
+router.post('/update-course/:_id', adminController.updateCourse); 
+router.get('/updateCoursePage/:_id', adminController.updateCoursePage);
 module.exports = router;
 
    

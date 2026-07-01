@@ -203,7 +203,7 @@ exports.deleteCourse = async (req, res) => {
 exports.updateCourse = async (req,res)=>{
     const { _id } = req.params;
     try {
-        await courses.updateOne({ _id });
+        await courses.findOneAndUpdate({ _id },req.body);
         console.log("Course updated successfully");
         res.redirect("/admin/all-courses");
     } catch (err) {
